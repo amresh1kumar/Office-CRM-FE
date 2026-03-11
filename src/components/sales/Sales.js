@@ -1,16 +1,11 @@
 import { useContext, useState, useEffect } from "react";
-import { Table, Card, Statistic, Row, Col, message, Form, Button, Modal, Input, DatePicker, InputNumber } from "antd";
+import { Table, Card,  message, Form, Button, Modal,  DatePicker, InputNumber } from "antd";
 import { AuthContext } from "../context/AuthContext";
-import { DollarOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import axios from "../../api/axios";
 import {
    EditOutlined,
-   DeleteOutlined,
-   PlusOutlined
 } from "@ant-design/icons";
-
-
 
 const Sales = () => {
 

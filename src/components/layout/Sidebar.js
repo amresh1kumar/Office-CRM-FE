@@ -4,10 +4,7 @@ import {
    UserOutlined,
    TeamOutlined,
    DollarOutlined,
-   SettingOutlined,
    CalendarOutlined,
-   FileTextOutlined,
-   CustomerServiceOutlined,
    BarChartOutlined,
    ProjectOutlined
 } from "@ant-design/icons";

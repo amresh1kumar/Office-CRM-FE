@@ -85,11 +85,11 @@ const Dashboard = () => {
          ? Number(monthlyRevenue[monthlyRevenue.length - 1].revenue)
          : 0;
 
-   const avgMonthlyRevenue =
-      monthlyRevenue.length > 0
-         ? monthlyRevenue.reduce((sum, item) => sum + Number(item.revenue), 0) /
-         monthlyRevenue.length
-         : 0;
+   // const avgMonthlyRevenue =
+   //    monthlyRevenue.length > 0
+   //       ? monthlyRevenue.reduce((sum, item) => sum + Number(item.revenue), 0) /
+   //       monthlyRevenue.length
+   //       : 0;
 
 
    // Fetch all data
