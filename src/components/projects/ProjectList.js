@@ -1,128 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { Table, Button, Modal, Form, Input, message, Popconfirm } from "antd";
-// import { EditOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
-// import axios from "../../api/axios";
-
-// const Projects = () => {
-
-//    const [projects, setProjects] = useState([]);
-//    const [open, setOpen] = useState(false);
-//    const [editingProject, setEditingProject] = useState(null);
-//    const [form] = Form.useForm();
-
-//    const fetchProjects = async () => {
-//       const res = await axios.get("/projects");
-//       setProjects(res.data);
-//    };
-
-//    useEffect(() => {
-//       fetchProjects();
-//    }, []);
-
-//    const handleSubmit = async (values) => {
-//       try {
-//          if (editingProject) {
-//             await axios.put(`/projects/${editingProject.id}`, values);
-//             message.success("Project updated");
-//          } else {
-//             await axios.post("/projects", values);
-//             message.success("Project created");
-//          }
-
-//          setOpen(false);
-//          setEditingProject(null);
-//          form.resetFields();
-//          fetchProjects();
-
-//       } catch (err) {
-//          message.error("Operation failed");
-//       }
-//    };
-
-//    const handleDelete = async (id) => {
-//       try {
-//          await axios.delete(`/projects/${id}`);
-//          message.success("Project deleted");
-//          fetchProjects();
-//       } catch {
-//          message.error("Delete failed");
-//       }
-//    };
-
-//    const columns = [
-//       {
-//          title: "Project Name",
-//          dataIndex: "name"
-//       },
-//       {
-//          title: "Total Leads",
-//          dataIndex: "lead_count"
-//       },
-//       {
-//          title: "Action",
-//          render: (_, record) => (
-//             <>
-//                <Button
-//                   icon={<EditOutlined />}
-//                   onClick={() => {
-//                      setEditingProject(record);
-//                      setOpen(true);
-//                      form.setFieldsValue(record);
-//                   }}
-//                />
-
-//                <Popconfirm
-//                   title="Delete Project?"
-//                   onConfirm={() => handleDelete(record.id)}
-//                >
-//                   <Button danger icon={<DeleteOutlined />} />
-//                </Popconfirm>
-//             </>
-//          )
-//       }
-//    ];
-
-//    return (
-//       <div>
-//          <Button
-//             type="primary"
-//             icon={<PlusOutlined />}
-//             onClick={() => setOpen(true)}
-//          >
-//             Add Project
-//          </Button>
-
-//          <Table
-//             dataSource={projects}
-//             columns={columns}
-//             rowKey="id"
-//          />
-
-//          <Modal
-//             title={editingProject ? "Edit Project" : "Add Project"}
-//             open={open}
-//             onCancel={() => setOpen(false)}
-//             footer={null}
-//          >
-//             <Form form={form} onFinish={handleSubmit}>
-//                <Form.Item
-//                   name="name"
-//                   rules={[{ required: true }]}
-//                >
-//                   <Input placeholder="Project Name" />
-//                </Form.Item>
-
-//                <Button type="primary" htmlType="submit">
-//                   {editingProject ? "Update" : "Create"}
-//                </Button>
-//             </Form>
-//          </Modal>
-//       </div>
-//    );
-// };
-
-// export default Projects;
-
 import { useEffect, useState } from "react";
 import {
    Table,
@@ -150,7 +25,6 @@ import {
    ProjectOutlined,
    TeamOutlined,
    SearchOutlined,
-   ReloadOutlined,
    ExclamationCircleOutlined
 } from "@ant-design/icons";
 import axios from "../../api/axios";
@@ -229,7 +103,7 @@ const Projects = () => {
    );
 
    // Calculate stats
-   const totalLeads = projects.reduce((acc, p) => acc + (p.lead_count || 0), 0);
+   // const totalLeads = projects.reduce((acc, p) => acc + (p.lead_count || 0), 0);
    const activeProjects = projects.filter((p) => p.lead_count > 0).length;
 
    const columns = [

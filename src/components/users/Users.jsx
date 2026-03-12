@@ -17,7 +17,6 @@ import { AuthContext } from "../context/AuthContext";
 import {
    EditOutlined,
    DeleteOutlined,
-   PlusOutlined
 } from "@ant-design/icons";
 
 const Users = () => {
